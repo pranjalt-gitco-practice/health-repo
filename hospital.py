@@ -3,7 +3,6 @@
 from dataclasses import dataclass
 import math
 
-
 @dataclass
 class Bill:
     """Breakdown of a patient's hospital charges."""
@@ -17,7 +16,6 @@ class Bill:
         """Return the total amount due."""
         return self.stay_days * self.daily_rate + self.treatment_charge
 
-
 @dataclass
 class Patient:
     """Basic details maintained for one admitted patient."""
@@ -28,7 +26,6 @@ class Patient:
     diagnosis: str
     doctor: str | None = None
     bill: Bill | None = None
-
 
 class Hospital:
     """Manage patient admissions, doctors, bills, and reports in memory."""
@@ -112,7 +109,6 @@ class Hospital:
                 return patient
         raise ValueError(f"No patient found with ID {patient_id!r}.")
 
-
 def main() -> None:
     """Run a single-patient demonstration through the requested workflow."""
     hospital = Hospital()
@@ -140,7 +136,6 @@ def main() -> None:
     print("\nPatient list:")
     for admitted_patient in hospital.list_patients():
         print(f"{admitted_patient.patient_id}: {admitted_patient.name}")
-
 
 if __name__ == "__main__":
     main()
